@@ -63,6 +63,10 @@ class SelectItemsView: UIView, UISearchBarDelegate {
         self.searched?(searchText)
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
