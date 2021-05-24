@@ -27,6 +27,8 @@ extension PreferenceScreenVC {
                 guard let countriesArray = countriesData.Records else { return }
                  
                 self.dataModel.countries = countriesArray
+                self.dataModel.countriesF = countriesArray
+                
                 DispatchQueue.main.async {
                     self.countriesTableView.reloadData()
                 }
@@ -55,6 +57,7 @@ extension PreferenceScreenVC {
                                
                 print("teamsCount \(teamsArray.count)")
                 self.dataModel.teams = teamsArray
+                self.dataModel.teamsF = teamsArray
                 DispatchQueue.main.async {
                     self.teamsTableView.reloadData()
                 }

@@ -63,6 +63,9 @@
                         <searchBar hidden="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-rB-a6k">
                             <rect key="frame" x="0.0" y="8" width="483" height="134"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="T16-dA-bz2"/>
+                            </connections>
                         </searchBar>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9A-Jq-lh9">
                             <rect key="frame" x="15" y="65" width="71" height="20.5"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectItemsView: UIView {
+class SelectItemsView: UIView, UISearchBarDelegate {
     
     @IBOutlet var container: UIView!
     
@@ -19,6 +19,8 @@ class SelectItemsView: UIView {
     
     var showDropDown: ((Bool)->())?
     
+    var searched: ((String)->())?
+
     var isShownDropDown = false
     
     override init(frame: CGRect) {
@@ -37,13 +39,13 @@ class SelectItemsView: UIView {
         addSubview(container)
         container.frame = self.bounds
         container.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        selectSerchField.delegate = self
     }
     
     private func setSelectFieldBorder() {
         self.selectField.layer.cornerRadius = 6
         self.selectField.layer.borderColor = UIColor.lightGray.cgColor
         self.selectField.layer.borderWidth = 1
-
         self.clipsToBounds = true
     }
 
@@ -54,6 +56,10 @@ class SelectItemsView: UIView {
         self.selectSerchField.isHidden = !isShownDropDown
         self.showDropDown?(isShownDropDown)
         
+    }
+        
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searched?(searchText)
     }
     
     required init?(coder aDecoder: NSCoder) {
