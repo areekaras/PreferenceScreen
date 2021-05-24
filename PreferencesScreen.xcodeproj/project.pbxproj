@@ -9,21 +9,49 @@
 /* Begin PBXBuildFile section */
 		603D4854265AA93600FC6901 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D4853265AA93600FC6901 /* AppDelegate.swift */; };
 		603D4856265AA93600FC6901 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D4855265AA93600FC6901 /* SceneDelegate.swift */; };
-		603D4858265AA93600FC6901 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D4857265AA93600FC6901 /* ViewController.swift */; };
+		603D4858265AA93600FC6901 /* PreferenceScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D4857265AA93600FC6901 /* PreferenceScreenVC.swift */; };
 		603D485B265AA93600FC6901 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 603D4859265AA93600FC6901 /* Main.storyboard */; };
 		603D485D265AA93700FC6901 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603D485C265AA93700FC6901 /* Assets.xcassets */; };
 		603D4860265AA93700FC6901 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 603D485E265AA93700FC6901 /* LaunchScreen.storyboard */; };
+		603D4876265AC73500FC6901 /* SelectItemsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603D4875265AC73500FC6901 /* SelectItemsView.xib */; };
+		603D4879265AC8E200FC6901 /* SelectItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D4878265AC8E200FC6901 /* SelectItemsView.swift */; };
+		603D487E265ACA8100FC6901 /* ViewNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603D487D265ACA8100FC6901 /* ViewNames.swift */; };
+		607BE035265B59B1006A058E /* DropDownTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607BE034265B59B1006A058E /* DropDownTableView.xib */; };
+		607BE038265B5A1D006A058E /* DropDownTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BE037265B5A1D006A058E /* DropDownTableView.swift */; };
+		607BE041265B5E53006A058E /* DropDownTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607BE040265B5E53006A058E /* DropDownTVCell.xib */; };
+		607BE044265B5E6B006A058E /* DropDownTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BE043265B5E6B006A058E /* DropDownTVCell.swift */; };
+		607BE048265B68D8006A058E /* PreferencesTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607BE047265B68D8006A058E /* PreferencesTVCell.xib */; };
+		607BE04B265B6900006A058E /* PreferencesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BE04A265B6900006A058E /* PreferencesTVCell.swift */; };
+		607E73F3265AFAC80026F9BE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E73F2265AFAC80026F9BE /* Network.swift */; };
+		607E73F8265B006A0026F9BE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E73F7265B006A0026F9BE /* Country.swift */; };
+		607E73FC265B03400026F9BE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E73FB265B03400026F9BE /* Team.swift */; };
+		607E73FF265B03FD0026F9BE /* LiveNotifPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E73FE265B03FD0026F9BE /* LiveNotifPref.swift */; };
+		607E7407265B093D0026F9BE /* PreferenceScreenVC+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E7406265B093D0026F9BE /* PreferenceScreenVC+Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		603D4850265AA93500FC6901 /* PreferencesScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreferencesScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		603D4853265AA93600FC6901 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		603D4855265AA93600FC6901 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		603D4857265AA93600FC6901 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		603D4857265AA93600FC6901 /* PreferenceScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceScreenVC.swift; sourceTree = "<group>"; };
 		603D485A265AA93600FC6901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		603D485C265AA93700FC6901 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		603D485F265AA93700FC6901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		603D4861265AA93700FC6901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		603D4875265AC73500FC6901 /* SelectItemsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectItemsView.xib; sourceTree = "<group>"; };
+		603D4878265AC8E200FC6901 /* SelectItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemsView.swift; sourceTree = "<group>"; };
+		603D487D265ACA8100FC6901 /* ViewNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNames.swift; sourceTree = "<group>"; };
+		607BE034265B59B1006A058E /* DropDownTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownTableView.xib; sourceTree = "<group>"; };
+		607BE037265B5A1D006A058E /* DropDownTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableView.swift; sourceTree = "<group>"; };
+		607BE040265B5E53006A058E /* DropDownTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownTVCell.xib; sourceTree = "<group>"; };
+		607BE043265B5E6B006A058E /* DropDownTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTVCell.swift; sourceTree = "<group>"; };
+		607BE047265B68D8006A058E /* PreferencesTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesTVCell.xib; sourceTree = "<group>"; };
+		607BE04A265B6900006A058E /* PreferencesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTVCell.swift; sourceTree = "<group>"; };
+		607E73F2265AFAC80026F9BE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		607E73F7265B006A0026F9BE /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		607E73FB265B03400026F9BE /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		607E73FE265B03FD0026F9BE /* LiveNotifPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveNotifPref.swift; sourceTree = "<group>"; };
+		607E7406265B093D0026F9BE /* PreferenceScreenVC+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreferenceScreenVC+Network.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +84,125 @@
 		603D4852265AA93500FC6901 /* PreferencesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				607E7402265B08C40026F9BE /* Views and Controllers */,
+				607E73F6265B000C0026F9BE /* Models */,
+				607E73F1265AFAB90026F9BE /* Network */,
+				603D487C265ACA6E00FC6901 /* Constants */,
 				603D4853265AA93600FC6901 /* AppDelegate.swift */,
 				603D4855265AA93600FC6901 /* SceneDelegate.swift */,
-				603D4857265AA93600FC6901 /* ViewController.swift */,
-				603D4859265AA93600FC6901 /* Main.storyboard */,
 				603D485C265AA93700FC6901 /* Assets.xcassets */,
 				603D485E265AA93700FC6901 /* LaunchScreen.storyboard */,
 				603D4861265AA93700FC6901 /* Info.plist */,
 			);
 			path = PreferencesScreen;
+			sourceTree = "<group>";
+		};
+		603D4873265AC69E00FC6901 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				607BE03E265B5E18006A058E /* TableViewCells */,
+				607BE033265B597C006A058E /* DropDownTableView */,
+				603D4874265AC6A800FC6901 /* SelectItemsView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		603D4874265AC6A800FC6901 /* SelectItemsView */ = {
+			isa = PBXGroup;
+			children = (
+				603D4875265AC73500FC6901 /* SelectItemsView.xib */,
+				603D4878265AC8E200FC6901 /* SelectItemsView.swift */,
+			);
+			path = SelectItemsView;
+			sourceTree = "<group>";
+		};
+		603D487C265ACA6E00FC6901 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				603D487D265ACA8100FC6901 /* ViewNames.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		607BE033265B597C006A058E /* DropDownTableView */ = {
+			isa = PBXGroup;
+			children = (
+				607BE034265B59B1006A058E /* DropDownTableView.xib */,
+				607BE037265B5A1D006A058E /* DropDownTableView.swift */,
+			);
+			path = DropDownTableView;
+			sourceTree = "<group>";
+		};
+		607BE03E265B5E18006A058E /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				607BE046265B68C4006A058E /* PreferencesTVCell */,
+				607BE03F265B5E25006A058E /* DropDownTVCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		607BE03F265B5E25006A058E /* DropDownTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				607BE040265B5E53006A058E /* DropDownTVCell.xib */,
+				607BE043265B5E6B006A058E /* DropDownTVCell.swift */,
+			);
+			path = DropDownTVCell;
+			sourceTree = "<group>";
+		};
+		607BE046265B68C4006A058E /* PreferencesTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				607BE047265B68D8006A058E /* PreferencesTVCell.xib */,
+				607BE04A265B6900006A058E /* PreferencesTVCell.swift */,
+			);
+			path = PreferencesTVCell;
+			sourceTree = "<group>";
+		};
+		607E73F1265AFAB90026F9BE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				607E73F2265AFAC80026F9BE /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		607E73F6265B000C0026F9BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				607E73F7265B006A0026F9BE /* Country.swift */,
+				607E73FB265B03400026F9BE /* Team.swift */,
+				607E73FE265B03FD0026F9BE /* LiveNotifPref.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		607E7402265B08C40026F9BE /* Views and Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				607E7404265B08F20026F9BE /* Storyboards */,
+				607E7403265B08D50026F9BE /* Controllers */,
+				603D4873265AC69E00FC6901 /* CustomViews */,
+			);
+			path = "Views and Controllers";
+			sourceTree = "<group>";
+		};
+		607E7403265B08D50026F9BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				603D4857265AA93600FC6901 /* PreferenceScreenVC.swift */,
+				607E7406265B093D0026F9BE /* PreferenceScreenVC+Network.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		607E7404265B08F20026F9BE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				603D4859265AA93600FC6901 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +263,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				603D4860265AA93700FC6901 /* LaunchScreen.storyboard in Resources */,
+				607BE035265B59B1006A058E /* DropDownTableView.xib in Resources */,
+				607BE048265B68D8006A058E /* PreferencesTVCell.xib in Resources */,
+				603D4876265AC73500FC6901 /* SelectItemsView.xib in Resources */,
 				603D485D265AA93700FC6901 /* Assets.xcassets in Resources */,
+				607BE041265B5E53006A058E /* DropDownTVCell.xib in Resources */,
 				603D485B265AA93600FC6901 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +279,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				603D4858265AA93600FC6901 /* ViewController.swift in Sources */,
+				607E73F8265B006A0026F9BE /* Country.swift in Sources */,
+				603D4858265AA93600FC6901 /* PreferenceScreenVC.swift in Sources */,
+				603D4879265AC8E200FC6901 /* SelectItemsView.swift in Sources */,
+				607E73F3265AFAC80026F9BE /* Network.swift in Sources */,
+				607E7407265B093D0026F9BE /* PreferenceScreenVC+Network.swift in Sources */,
+				607E73FC265B03400026F9BE /* Team.swift in Sources */,
 				603D4854265AA93600FC6901 /* AppDelegate.swift in Sources */,
+				607E73FF265B03FD0026F9BE /* LiveNotifPref.swift in Sources */,
 				603D4856265AA93600FC6901 /* SceneDelegate.swift in Sources */,
+				603D487E265ACA8100FC6901 /* ViewNames.swift in Sources */,
+				607BE044265B5E6B006A058E /* DropDownTVCell.swift in Sources */,
+				607BE04B265B6900006A058E /* PreferencesTVCell.swift in Sources */,
+				607BE038265B5A1D006A058E /* DropDownTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
