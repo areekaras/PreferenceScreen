@@ -38,18 +38,19 @@ class DropDownTVCell: UITableViewCell {
     var isSelectedCell: Bool = true {
         didSet {
             if isSelectedCell {
-                self.nameLabel.textColor = UIColor.green
-                self.radioButtonIV.image = UIImage(named: "radioOn")
+                let green = UIColor.init(displayP3Red: 100/255.0, green: 185/255.0, blue: 105/255.0, alpha: 1.0)
+                self.nameLabel.textColor = green
+                self.radioButtonIV.image = UIImage(named: "checkbox")
+                self.radioButtonIV.imageColor = green
             } else {
                 self.nameLabel.textColor = UIColor.black
-                self.radioButtonIV.image = UIImage(named: "radioOff")
+                self.radioButtonIV.image = UIImage(named: "square-outline")
             }
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.selectionStyle = UITableViewCell.SelectionStyle.none
         self.nameLabel.text = ""
     }
@@ -70,4 +71,20 @@ class DropDownTVCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+}
+
+extension UIImageView {
+    var imageColor: UIColor? {
+        set (newValue) {
+            guard let image = image else { return }
+            if newValue != nil {
+                self.image = image.withRenderingMode(.alwaysTemplate)
+                tintColor = newValue
+            } else {
+                self.image = image.withRenderingMode(.alwaysOriginal)
+                tintColor = UIColor.clear
+            }
+        }
+        get { return tintColor }
+    }
 }
