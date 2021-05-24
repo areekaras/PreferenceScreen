@@ -22,6 +22,7 @@
 		607BE044265B5E6B006A058E /* DropDownTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BE043265B5E6B006A058E /* DropDownTVCell.swift */; };
 		607BE048265B68D8006A058E /* PreferencesTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607BE047265B68D8006A058E /* PreferencesTVCell.xib */; };
 		607BE04B265B6900006A058E /* PreferencesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BE04A265B6900006A058E /* PreferencesTVCell.swift */; };
+		607BE04E265BA072006A058E /* PreferenceScreenDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607BE04D265BA072006A058E /* PreferenceScreenDataModel.swift */; };
 		607E73F3265AFAC80026F9BE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E73F2265AFAC80026F9BE /* Network.swift */; };
 		607E73F8265B006A0026F9BE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E73F7265B006A0026F9BE /* Country.swift */; };
 		607E73FC265B03400026F9BE /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607E73FB265B03400026F9BE /* Team.swift */; };
@@ -47,6 +48,7 @@
 		607BE043265B5E6B006A058E /* DropDownTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTVCell.swift; sourceTree = "<group>"; };
 		607BE047265B68D8006A058E /* PreferencesTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesTVCell.xib; sourceTree = "<group>"; };
 		607BE04A265B6900006A058E /* PreferencesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTVCell.swift; sourceTree = "<group>"; };
+		607BE04D265BA072006A058E /* PreferenceScreenDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceScreenDataModel.swift; sourceTree = "<group>"; };
 		607E73F2265AFAC80026F9BE /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		607E73F7265B006A0026F9BE /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		607E73FB265B03400026F9BE /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				603D4857265AA93600FC6901 /* PreferenceScreenVC.swift */,
 				607E7406265B093D0026F9BE /* PreferenceScreenVC+Network.swift */,
+				607BE04D265BA072006A058E /* PreferenceScreenDataModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				607E73FC265B03400026F9BE /* Team.swift in Sources */,
 				603D4854265AA93600FC6901 /* AppDelegate.swift in Sources */,
 				607E73FF265B03FD0026F9BE /* LiveNotifPref.swift in Sources */,
+				607BE04E265BA072006A058E /* PreferenceScreenDataModel.swift in Sources */,
 				603D4856265AA93600FC6901 /* SceneDelegate.swift in Sources */,
 				603D487E265ACA8100FC6901 /* ViewNames.swift in Sources */,
 				607BE044265B5E6B006A058E /* DropDownTVCell.swift in Sources */,

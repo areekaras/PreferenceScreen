@@ -26,8 +26,10 @@ extension PreferenceScreenVC {
                 guard let countriesData = response.Data else { return }
                 guard let countriesArray = countriesData.Records else { return }
                  
-                self.countries = countriesArray
-                print(countries)
+                self.dataModel.countries = countriesArray
+                DispatchQueue.main.async {
+                    self.countriesTableView.reloadData()
+                }
             }
             catch let jsonErr {
                 print("jsonErr :: \(jsonErr)")
@@ -49,9 +51,13 @@ extension PreferenceScreenVC {
                 let response = try JSONDecoder().decode(ResponseTeamData.self, from: data)
    
                 guard let teamsData = response.Data else { return }
-                guard let teams = teamsData.Records else { return }
+                guard let teamsArray = teamsData.Records else { return }
                                
-                print(teams)
+                print("teamsCount \(teamsArray.count)")
+                self.dataModel.teams = teamsArray
+                DispatchQueue.main.async {
+                    self.teamsTableView.reloadData()
+                }
             }
             catch let jsonErr {
                 print("jsonErr :: \(jsonErr)")
@@ -74,9 +80,13 @@ extension PreferenceScreenVC {
                 let response = try JSONDecoder().decode(ResponseLiveNotifPrefData.self, from: data)
                 
                 guard let liveNotifPrefData = response.Data else { return }
-                guard let liveNotifPrefs = liveNotifPrefData.Records else { return }
-                               
-                print(liveNotifPrefs)
+                guard let liveNotifPrefsArray = liveNotifPrefData.Records else { return }
+                             
+                print("livNotifPrefCount \(liveNotifPrefsArray.count)")
+                self.dataModel.liveNotifPrefs = liveNotifPrefsArray
+                DispatchQueue.main.async {
+                    self.preferencesTV.reloadData()
+                }
             }
             catch let jsonErr {
                 print("jsonErr :: \(jsonErr)")

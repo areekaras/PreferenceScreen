@@ -88,7 +88,7 @@ open class Network :NSObject  {
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         let parameters: [String: Any] = [
-            DataParameters.CountryID.rawValue: countryID
+            DataParameters.CountryID.rawValue: ""//countryID
         ]
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
         

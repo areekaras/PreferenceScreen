@@ -17,6 +17,7 @@ class PreferencesTVCell: UITableViewCell {
     
     var liveNotifPref:LiveNotifPref? {
         didSet {
+            self.updateView()
             self.updateName()
         }
     }
