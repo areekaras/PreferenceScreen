@@ -51,10 +51,8 @@ extension PreferenceScreenVC {
             
             do {
                 let response = try JSONDecoder().decode(ResponseTeamData.self, from: data)
-   
                 guard let teamsData = response.Data else { return }
                 guard let teamsArray = teamsData.Records else { return }
-                               
                 print("teamsCount \(teamsArray.count)")
                 self.dataModel.teams = teamsArray
                 self.dataModel.teamsF = teamsArray
@@ -66,6 +64,18 @@ extension PreferenceScreenVC {
                 print("jsonErr :: \(jsonErr)")
             }
         }
+    }
+    
+    func resetTeam(){
+        self.dataModel.teams = []
+        self.dataModel.teamsF = []
+        self.dataModel.selectedTeam = nil
+        self.selectTeamView.selectFieldLabel.text  = "Select Team"
+    }
+    
+    func resetLivNot(){
+        self.dataModel.liveNotifPrefs = []
+        self.dataModel.selectedLiveNotifPref = []
     }
     
     func getLiveNotifPrefList(countryID: String?, teamID: String?) {

@@ -86,8 +86,12 @@ extension PreferenceScreenVC: UITableViewDelegate, UITableViewDataSource {
             if (dataModel.selectedCountry?.CountryID != cell.country?.CountryID || dataModel.selectedCountry == nil) {
                 dataModel.selectedCountry = cell.country
                 self.selectCountryView.selectFieldLabel.text = dataModel.selectedCountry?.CountryName
-                self.getTeamsList(countryID: dataModel.selectedCountry?.CountryID)
+                self.resetTeam()
+                self.teamsTableView.reloadData()
+                self.resetLivNot()
+                self.preferencesTV.reloadData()
                 tableView.reloadData()
+                self.getTeamsList(countryID: dataModel.selectedCountry?.CountryID)
             }
             self.removeDropDownView(tableView: self.countriesTableView, frame: self.selectCountryView.frame)
             self.selectCountryView.isShownDropDown = false
@@ -98,6 +102,8 @@ extension PreferenceScreenVC: UITableViewDelegate, UITableViewDataSource {
                 dataModel.selectedTeam = cell.team
                 self.selectTeamView.selectFieldLabel.text = dataModel.selectedTeam?.TeamName
                 self.getLiveNotifPrefList(countryID: dataModel.selectedCountry?.CountryID, teamID: dataModel.selectedTeam?.TeamGUID)
+                self.resetLivNot()
+                self.preferencesTV.reloadData()
                 tableView.reloadData()
             }
             self.removeDropDownView(tableView: self.teamsTableView, frame: self.selectTeamView.frame)

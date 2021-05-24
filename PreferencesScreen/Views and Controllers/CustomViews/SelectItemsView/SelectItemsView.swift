@@ -57,6 +57,7 @@ class SelectItemsView: UIView, UISearchBarDelegate {
     @IBAction func arrowButtonClicked(_ sender: UIButton) {
         isShownDropDown = !isShownDropDown
         self.showDropDown?(isShownDropDown)
+        self.selectSerchField.resignFirstResponder()
     }
         
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
