@@ -79,7 +79,7 @@ open class Network :NSObject  {
         })
     }
     
-    func getTeams(countryID:Int, _ completion:@escaping (_ data:Data?,_ action:String,_ serviceStatus:String) -> Void) {
+    func getTeams(countryID:String?, _ completion:@escaping (_ data:Data?,_ action:String,_ serviceStatus:String) -> Void) {
         let url = BaseUrl.baseUrl.rawValue + RelativeUrl.teamsList.rawValue
         guard let myUrl:URL = URL(string: url) else { return }
         
@@ -97,7 +97,7 @@ open class Network :NSObject  {
         })
     }
     
-    func getLiveNotifPref(countryID:Int, teamID:String,_ completion:@escaping (_ data:Data?,_ action:String,_ serviceStatus:String) -> Void) {
+    func getLiveNotifPref(countryID:String?, teamID:String?,_ completion:@escaping (_ data:Data?,_ action:String,_ serviceStatus:String) -> Void) {
         let url = BaseUrl.baseUrl.rawValue + RelativeUrl.liveNotifPref.rawValue
         guard let myUrl:URL = URL(string: url) else { return }
         
@@ -106,8 +106,8 @@ open class Network :NSObject  {
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         let parameters: [String: Any] = [
-            DataParameters.CountryID.rawValue: countryID,
-            DataParameters.TeamID.rawValue: teamID
+            DataParameters.CountryID.rawValue: countryID ?? "", //116
+            DataParameters.TeamID.rawValue: teamID ?? "" //"7a966922-735b-ee85-d18a-95b27ba6f587"
         ]
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
         

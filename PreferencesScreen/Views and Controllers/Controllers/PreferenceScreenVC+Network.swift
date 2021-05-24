@@ -37,9 +37,9 @@ extension PreferenceScreenVC {
         }
     }
     
-    func getTeamsList() {
+    func getTeamsList(countryID: String?) {
         let network = Network()
-        network.getTeams(countryID: 116) { [unowned self]  (data, action, serviceStatus) in
+        network.getTeams(countryID: countryID) { [unowned self]  (data, action, serviceStatus) in
             
             if serviceStatus == ServiceStatus.FAILED.rawValue {
                 print("Error-GetTeams status failed")
@@ -65,9 +65,9 @@ extension PreferenceScreenVC {
         }
     }
     
-    func getLiveNotifPrefList() {
+    func getLiveNotifPrefList(countryID: String?, teamID: String?) {
         let network = Network()
-        network.getLiveNotifPref(countryID: 116, teamID: "7a966922-735b-ee85-d18a-95b27ba6f587") { [unowned self]  (data, action, serviceStatus) in
+        network.getLiveNotifPref(countryID: countryID, teamID: teamID) { [unowned self]  (data, action, serviceStatus) in
             
             if serviceStatus == ServiceStatus.FAILED.rawValue {
                 print("Error-GetTeams status failed")

@@ -35,9 +35,22 @@ class DropDownTVCell: UITableViewCell {
         }
     }
     
+    var isSelectedCell: Bool = true {
+        didSet {
+            if isSelectedCell {
+                self.nameLabel.textColor = UIColor.green
+                self.radioButtonIV.image = UIImage(named: "radioOn")
+            } else {
+                self.nameLabel.textColor = UIColor.black
+                self.radioButtonIV.image = UIImage(named: "radioOff")
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
         self.nameLabel.text = ""
     }
     

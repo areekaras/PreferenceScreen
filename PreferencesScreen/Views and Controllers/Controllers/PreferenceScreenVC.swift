@@ -24,8 +24,6 @@ class PreferenceScreenVC: UIViewController {
         super.viewDidLoad()
         
         self.getCountriesList()
-        self.getTeamsList()
-        self.getLiveNotifPrefList()
         self.setDropDownTableViewUI(tableView: countriesTableView)
         self.setDropDownTableViewUI(tableView: teamsTableView)
         self.setNotifPrefTableViewUI()
@@ -34,6 +32,9 @@ class PreferenceScreenVC: UIViewController {
         self.setSaveButtonUI()
     }
     
+    @IBAction func saveButtonClicked(_ sender: Any) {
+        print("data \n selected country \(dataModel.selectedCountry) \nselectedTeam \(dataModel.selectedTeam) \nselectedPrefs \(dataModel.selectedLiveNotifPref)")
+    }
     
 }
 
@@ -58,18 +59,21 @@ extension PreferenceScreenVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ViewNames.DropDownTVCell, for: indexPath) as? DropDownTVCell else { return UITableViewCell() }
         
             cell.country = dataModel.countries[indexPath.row]
+            cell.isSelectedCell = (dataModel.selectedCountry?.CountryID == cell.dataModel?.id)
             
             return cell
         } else if (tableView == teamsTableView) {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ViewNames.DropDownTVCell, for: indexPath) as? DropDownTVCell else { return UITableViewCell() }
         
             cell.team = dataModel.teams[indexPath.row]
+            cell.isSelectedCell = (dataModel.selectedTeam?.TeamGUID == cell.dataModel?.id)
             
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ViewNames.PreferencesTVCell, for: indexPath) as? PreferencesTVCell else { return UITableViewCell() }
         
             cell.liveNotifPref = dataModel.liveNotifPrefs[indexPath.row]
+            cell.isSelectedCell = dataModel.selectedLiveNotifPref.contains(dataModel.liveNotifPrefs[indexPath.row].NotificationTypeID ?? "")
             
             return cell
         }
@@ -77,9 +81,39 @@ extension PreferenceScreenVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (tableView == preferencesTV) {
+        if (tableView == countriesTableView) {
+            guard let cell = tableView.cellForRow(at: indexPath) as? DropDownTVCell else { return }
+            if (dataModel.selectedCountry?.CountryID != cell.country?.CountryID || dataModel.selectedCountry == nil) {
+                dataModel.selectedCountry = cell.country
+                self.selectCountryView.selectFieldLabel.text = dataModel.selectedCountry?.CountryName
+                self.getTeamsList(countryID: dataModel.selectedCountry?.CountryID)
+                tableView.reloadData()
+            }
+            self.removeDropDownView(tableView: self.countriesTableView, frame: self.selectCountryView.frame)
+            self.selectCountryView.isShownDropDown = false
+            
+        } else if (tableView == teamsTableView) {
+            guard let cell = tableView.cellForRow(at: indexPath) as? DropDownTVCell else { return }
+            if (dataModel.selectedTeam?.TeamGUID != cell.team?.TeamGUID || dataModel.selectedTeam == nil) {
+                dataModel.selectedTeam = cell.team
+                self.selectTeamView.selectFieldLabel.text = dataModel.selectedTeam?.TeamName
+                self.getLiveNotifPrefList(countryID: dataModel.selectedCountry?.CountryID, teamID: dataModel.selectedTeam?.TeamGUID)
+                tableView.reloadData()
+            }
+            self.removeDropDownView(tableView: self.teamsTableView, frame: self.selectTeamView.frame)
+            self.selectTeamView.isShownDropDown = false
+            
+        }
+        else if (tableView == preferencesTV) {
             guard let cell = tableView.cellForRow(at: indexPath) as? PreferencesTVCell else { return }
-            cell.isSelectedCell = !cell.isSelectedCell
+            if (dataModel.selectedLiveNotifPref.contains(cell.liveNotifPref?.NotificationTypeID ?? "")) {
+                if let index = dataModel.selectedLiveNotifPref.firstIndex(of: cell.liveNotifPref?.NotificationTypeID ?? "") {
+                    dataModel.selectedLiveNotifPref.remove(at: index)
+                }
+            } else {
+                dataModel.selectedLiveNotifPref.append(cell.liveNotifPref?.NotificationTypeID ?? "")
+            }
+            tableView.reloadData()
         }
     }
 }
@@ -89,9 +123,11 @@ extension PreferenceScreenVC: UITableViewDelegate, UITableViewDataSource {
 extension PreferenceScreenVC {
     private func setSelectCountryViewUI() {
         self.selectCountryView.title.text = "SELECT COUNTRY"
-        self.selectCountryView.selectFieldLabel.text = "Select All"
+        self.selectCountryView.selectFieldLabel.text = "Select Country"
         self.selectCountryView.showDropDown = { [unowned self] (isShown) in
             if isShown {
+                self.removeDropDownView(tableView: self.teamsTableView, frame: (self.selectTeamView.frame))
+                self.selectTeamView.isShownDropDown = false
                 self.addDropDownView(tableView: self.countriesTableView, frame: (self.selectCountryView.frame))
             } else {
                 self.removeDropDownView(tableView: self.countriesTableView, frame: (self.selectCountryView.frame))
@@ -103,9 +139,11 @@ extension PreferenceScreenVC {
     
     private func setSelectTeamViewUI() {
         self.selectTeamView.title.text = "SELECT TEAM"
-        self.selectTeamView.selectFieldLabel.text = "All Team"
+        self.selectTeamView.selectFieldLabel.text = "Select Team"
         self.selectTeamView.showDropDown = { [unowned self] (isShown) in
             if isShown {
+                self.removeDropDownView(tableView: self.countriesTableView, frame: (self.selectCountryView.frame))
+                self.selectCountryView.isShownDropDown = false
                 self.addDropDownView(tableView: self.teamsTableView, frame: (self.selectTeamView.frame))
             } else {
                 self.removeDropDownView(tableView: self.teamsTableView, frame: (self.selectTeamView.frame))

@@ -19,7 +19,13 @@ class SelectItemsView: UIView {
     
     var showDropDown: ((Bool)->())?
     
-    var isShownDropDown = false
+    var isShownDropDown = false {
+        didSet {
+            self.selectFieldArrowIcon.image = UIImage(named: isShownDropDown ?  "chevronUp" : "chevronDown")
+            self.selectFieldLabel.isHidden = isShownDropDown
+            self.selectSerchField.isHidden = !isShownDropDown
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +35,6 @@ class SelectItemsView: UIView {
     private func commonInit() {
         self.setXib()
         self.setSelectFieldBorder()
-
     }
     
     private func setXib() {
@@ -49,11 +54,7 @@ class SelectItemsView: UIView {
 
     @IBAction func arrowButtonClicked(_ sender: UIButton) {
         isShownDropDown = !isShownDropDown
-        self.selectFieldArrowIcon.image = UIImage(named: isShownDropDown ?  "chevronUp" : "chevronDown")
-        self.selectFieldLabel.isHidden = isShownDropDown
-        self.selectSerchField.isHidden = !isShownDropDown
         self.showDropDown?(isShownDropDown)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
