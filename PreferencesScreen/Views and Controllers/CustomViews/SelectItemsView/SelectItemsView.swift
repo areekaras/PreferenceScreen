@@ -14,6 +14,7 @@ class SelectItemsView: UIView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var selectField: UIView!
     @IBOutlet weak var selectFieldLabel: UILabel!
+    @IBOutlet weak var selectSerchField: UISearchBar!
     @IBOutlet weak var selectFieldArrowIcon: UIImageView!
     
     var showDropDown: ((Bool)->())?
@@ -49,7 +50,10 @@ class SelectItemsView: UIView {
     @IBAction func arrowButtonClicked(_ sender: UIButton) {
         isShownDropDown = !isShownDropDown
         self.selectFieldArrowIcon.image = UIImage(named: isShownDropDown ?  "chevronUp" : "chevronDown")
+        self.selectFieldLabel.isHidden = isShownDropDown
+        self.selectSerchField.isHidden = !isShownDropDown
         self.showDropDown?(isShownDropDown)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
