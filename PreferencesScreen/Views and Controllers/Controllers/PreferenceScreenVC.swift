@@ -132,9 +132,18 @@ extension PreferenceScreenVC {
             } else {
                 self.removeDropDownView(tableView: self.countriesTableView, frame: (self.selectCountryView.frame))
             }
-            
         }
-        
+        self.selectCountryView.searched = {[unowned self] (search) in
+            if(search.trimmingCharacters(in: .whitespacesAndNewlines).count == 0){
+                self.dataModel.countries = self.dataModel.countriesF
+            }
+            else{
+                self.dataModel.countries = self.dataModel.countriesF.filter { (country) -> Bool in
+                    (country.CountryName?.contains(search) ?? false)
+                 }
+            }
+            self.countriesTableView.reloadData()
+        }
     }
     
     private func setSelectTeamViewUI() {
@@ -148,6 +157,18 @@ extension PreferenceScreenVC {
             } else {
                 self.removeDropDownView(tableView: self.teamsTableView, frame: (self.selectTeamView.frame))
             }
+        }
+        
+        self.selectTeamView.searched = {[unowned self] (search) in
+            if(search.trimmingCharacters(in: .whitespacesAndNewlines).count == 0){
+                self.dataModel.teams = self.dataModel.teamsF
+            }
+            else{
+                self.dataModel.teams = self.dataModel.teamsF.filter { (team) -> Bool in
+                    (team.TeamName?.contains(search) ?? false)
+                 }
+            }
+            self.teamsTableView.reloadData()
         }
     }
     

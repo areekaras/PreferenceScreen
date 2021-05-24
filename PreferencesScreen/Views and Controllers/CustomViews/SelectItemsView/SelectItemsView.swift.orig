@@ -19,8 +19,7 @@ class SelectItemsView: UIView, UISearchBarDelegate {
     
     var showDropDown: ((Bool)->())?
     
-    var searched: ((String)->())?
-
+<<<<<<< HEAD
     var isShownDropDown = false {
         didSet {
             self.selectFieldArrowIcon.image = UIImage(named: isShownDropDown ?  "chevronUp" : "chevronDown")
@@ -28,6 +27,11 @@ class SelectItemsView: UIView, UISearchBarDelegate {
             self.selectSerchField.isHidden = !isShownDropDown
         }
     }
+=======
+    var searched: ((String)->())?
+
+    var isShownDropDown = false
+>>>>>>> ce61030f03dc48b46be76a2ab3b6954710b99e4a
     
     override init(frame: CGRect) {
         super.init(frame: frame)
