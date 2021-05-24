@@ -14,6 +14,7 @@
                 <outlet property="selectField" destination="43F-ZF-qof" id="svS-5w-a5d"/>
                 <outlet property="selectFieldArrowIcon" destination="eYL-dq-Wcs" id="77O-5s-M6u"/>
                 <outlet property="selectFieldLabel" destination="y9A-Jq-lh9" id="5c0-fl-fzO"/>
+                <outlet property="selectSerchField" destination="ldj-rB-a6k" id="6Bc-dr-IyB"/>
                 <outlet property="title" destination="hfO-YM-l1M" id="NfK-bk-slQ"/>
             </connections>
         </placeholder>
@@ -23,25 +24,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT COUNTRY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfO-YM-l1M">
-                    <rect key="frame" x="20" y="5" width="151.5" height="20.5"/>
+                    <rect key="frame" x="20" y="5" width="151.5" height="21"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43F-ZF-qof">
-                    <rect key="frame" x="20" y="33.5" width="531" height="150.5"/>
+                    <rect key="frame" x="20" y="34" width="531" height="150"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaY-sH-tHM">
-                            <rect key="frame" x="491" y="0.0" width="40" height="150.5"/>
+                            <rect key="frame" x="491" y="0.0" width="40" height="150"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drj-0S-FoH">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="150.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="150"/>
                                     <connections>
                                         <action selector="arrowButtonClicked:" destination="-1" eventType="touchUpInside" id="g7i-4x-9UB"/>
                                     </connections>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevronDown" translatesAutoresizingMaskIntoConstraints="NO" id="eYL-dq-Wcs">
-                                    <rect key="frame" x="2.5" y="65.5" width="25" height="20"/>
+                                    <rect key="frame" x="2.5" y="65" width="25" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="25" id="1U6-ay-7zf"/>
                                         <constraint firstAttribute="height" constant="20" id="BGH-j2-JK5"/>
@@ -59,6 +60,10 @@
                                 <constraint firstAttribute="bottom" secondItem="drj-0S-FoH" secondAttribute="bottom" id="vOW-ot-CTj"/>
                             </constraints>
                         </view>
+                        <searchBar hidden="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-rB-a6k">
+                            <rect key="frame" x="0.0" y="8" width="483" height="134"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9A-Jq-lh9">
                             <rect key="frame" x="15" y="65" width="71" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -68,11 +73,16 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="LaY-sH-tHM" firstAttribute="leading" secondItem="ldj-rB-a6k" secondAttribute="trailing" constant="8" id="05U-rV-tAg"/>
+                        <constraint firstItem="ldj-rB-a6k" firstAttribute="top" secondItem="43F-ZF-qof" secondAttribute="top" constant="8" id="6nQ-aX-rQK"/>
                         <constraint firstItem="LaY-sH-tHM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y9A-Jq-lh9" secondAttribute="trailing" constant="16" id="BMQ-7s-EOX"/>
                         <constraint firstItem="y9A-Jq-lh9" firstAttribute="leading" secondItem="43F-ZF-qof" secondAttribute="leading" constant="15" id="KNr-Ss-UhI"/>
                         <constraint firstItem="LaY-sH-tHM" firstAttribute="top" secondItem="43F-ZF-qof" secondAttribute="top" id="ZgL-tV-yGC"/>
+                        <constraint firstItem="ldj-rB-a6k" firstAttribute="leading" secondItem="43F-ZF-qof" secondAttribute="leading" id="eMi-8K-Np7"/>
+                        <constraint firstItem="ldj-rB-a6k" firstAttribute="centerY" secondItem="y9A-Jq-lh9" secondAttribute="centerY" id="nQH-IX-DfJ"/>
                         <constraint firstAttribute="trailing" secondItem="LaY-sH-tHM" secondAttribute="trailing" id="uE2-kN-XjN"/>
                         <constraint firstItem="y9A-Jq-lh9" firstAttribute="centerY" secondItem="LaY-sH-tHM" secondAttribute="centerY" id="uLi-DR-SGh"/>
+                        <constraint firstAttribute="bottom" secondItem="ldj-rB-a6k" secondAttribute="bottom" constant="8" id="v4a-hp-aXy"/>
                         <constraint firstAttribute="bottom" secondItem="LaY-sH-tHM" secondAttribute="bottom" id="wQr-Vw-3VE"/>
                     </constraints>
                 </view>
